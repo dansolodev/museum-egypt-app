@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.fs.museumegyptapp.ui.theme.MuseumEgyptAppTheme
+import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

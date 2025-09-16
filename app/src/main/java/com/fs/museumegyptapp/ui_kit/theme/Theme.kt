@@ -1,4 +1,4 @@
-package com.fs.museumegyptapp.ui.theme
+package com.fs.museumegyptapp.ui_kit.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
