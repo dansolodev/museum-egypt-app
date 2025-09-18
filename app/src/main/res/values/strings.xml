@@ -1,6 +1,29 @@
 <resources>
     <string name="app_name">MuseumEgyptApp</string>
     <string name="everyday_life_label">Vida cotidiana</string>
+    <string name="everyday_life_btn">Vida cotidiana (ver video)</string>
     <string name="architecture_label">Arquitectura</string>
     <string name="art_label">Arte</string>
+    <string name="everyday_life_first_text">La vida cotidiana en el Antiguo Egipto estaba fuertemente ligada al río Nilo y la agricultura, con campesinos dedicados a los cultivos y la vida en pequeñas casas de adobe. La sociedad era jerárquica, con el faraón en la cima, y las familias realizaban festejos para ocasiones importantes. La dieta consistía en cereales, legumbres, frutas y cerveza, y la higiene personal era fundamental.</string>
+    <!-- Trabajo y Economía -->
+    <string name="section_work_economy">Trabajo y Economía</string>
+    <string name="work_agriculture">Agricultura: La economía se sustentaba en la agricultura, con el uso de un sistema de diques y canales para regar las tierras del Nilo.</string>
+    <string name="work_barter">Trueque: Se utilizaba el trueque de cereales y otros productos como moneda de cambio, y el almacenamiento de excedentes era crucial para afrontar las hambrunas.</string>
+    <string name="work_hierarchy">Jerarquía: La sociedad era jerárquica, y el faraón, considerado un dios viviente, garantizaba la justicia.</string>
+
+    <!-- Vivienda y Rutina -->
+    <string name="section_living_routine">Vivienda y Rutina</string>
+    <string name="living_houses">Casas de adobe: Los campesinos vivían en casas sencillas construidas con adobe cerca de las tierras de cultivo.</string>
+    <string name="living_food">Alimentación: La dieta se basaba en pan, cebollas, ajo, miel, cerveza, vino y frutas como dátiles e higos.</string>
+    <string name="living_hygiene">Higiene y vestimenta: La higiene era importante, y la mayoría de las personas, de diversas clases sociales, andaban descalzas, usando sandalias de junco o cuero solo en ocasiones especiales.</string>
+
+    <!-- Cultura y Celebraciones -->
+    <string name="section_culture_celebrations">Cultura y Celebraciones</string>
+    <string name="culture_festivities">Festividades: Existían numerosas fiestas religiosas, que servían como días de descanso, para disfrutar de procesiones y festines de comida gratuita proporcionada por los templos.</string>
+    <string name="culture_rituals">Rituales familiares: Las celebraciones de nacimientos, matrimonios y funerales se conmemoraban en familia con rituales y festines, fortaleciendo los lazos y la conexión con el más allá.</string>
+
+    <!-- Salud y Medicina -->
+    <string name="section_health_medicine">Salud y Medicina</string>
+    <string name="health_holistic">Enfoque holístico: Los egipcios tenían una comprensión holística de la salud, cuidando tanto el cuerpo como el espíritu.</string>
+    <string name="health_herbs">Uso de hierbas: Los médicos eran respetados y utilizaban remedios naturales, como la miel, el ajo y diversas hierbas, para tratar dolencias y curar el cuerpo.</string>
 </resources>
