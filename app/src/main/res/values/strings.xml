@@ -27,11 +27,18 @@
     <string name="health_holistic">Enfoque holístico: Los egipcios tenían una comprensión holística de la salud, cuidando tanto el cuerpo como el espíritu.</string>
     <string name="health_herbs">Uso de hierbas: Los médicos eran respetados y utilizaban remedios naturales, como la miel, el ajo y diversas hierbas, para tratar dolencias y curar el cuerpo.</string>
 
-    <!-- architecture -->
+    <!-- Architecture -->
     <string name="architecture_mastabas">Mastabas</string>
     <string name="architecture_pyramids">Piramides</string>
     <string name="architecture_obelisk">Obelisco</string>
     <string name="architecture_temple">Templo</string>
     <string name="architecture_constructions">Construcciones civiles y militares</string>
+
+    <!-- Art -->
+    <string name="art_monumental_arq">Arquitectura monumental</string>
+    <string name="art_sculpture">Escultura</string>
+    <string name="art_mural">Pintura mural</string>
+    <string name="art_reliefs">Relieves</string>
+    <string name="art_minor_arts">Orfebrería y artes menores</string>
 
 </resources>
