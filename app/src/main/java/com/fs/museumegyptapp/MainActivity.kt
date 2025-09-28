@@ -4,7 +4,13 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.fs.museumegyptapp.model.MuseumRoutes
 import com.fs.museumegyptapp.ui.MainScreen
+import com.fs.museumegyptapp.ui.architecture.ArchitectureScreen
+import com.fs.museumegyptapp.ui.everydayLife.EverydayLifeScreen
 import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,8 +18,30 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val navController = rememberNavController()
             MuseumEgyptAppTheme {
-                MainScreen()
+                NavHost(navController = navController, startDestination = MuseumRoutes.Home.route) {
+                    composable(route = MuseumRoutes.Home.route) {
+                        MainScreen(
+                            onOptionSelected = {
+                                navController.navigate(route = it)
+                            }
+                        )
+                    }
+
+                    composable(route = MuseumRoutes.EverydayLife.route) {
+                        EverydayLifeScreen()
+                    }
+
+                    composable(route = MuseumRoutes.Architecture.route) {
+                        ArchitectureScreen()
+                    }
+
+                    composable(route = MuseumRoutes.Art.route) {
+
+                    }
+
+                }
             }
         }
     }

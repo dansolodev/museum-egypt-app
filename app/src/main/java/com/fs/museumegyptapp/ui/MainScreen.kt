@@ -18,6 +18,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.fs.museumegyptapp.R
 import com.fs.museumegyptapp.model.museumOptions
 import com.fs.museumegyptapp.ui_kit.components.PrimaryIconButton
@@ -25,6 +27,7 @@ import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 
 @Composable
 fun MainScreen(
+    onOptionSelected: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Box(modifier = modifier.fillMaxSize()) {
@@ -48,7 +51,7 @@ fun MainScreen(
                     items(items = museumOptions) { option ->
                         PrimaryIconButton(
                             text = stringResource(id = option.titleSection),
-                            onClick = {},
+                            onClick = {onOptionSelected(option.routes.route)},
                             icon = option.icon
                         )
                     }
@@ -62,6 +65,6 @@ fun MainScreen(
 @Composable
 private fun MainScreenPreview() {
     MuseumEgyptAppTheme {
-        MainScreen()
+        MainScreen({})
     }
 }
