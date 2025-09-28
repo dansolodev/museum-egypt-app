@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MuseumEgyptApp</string>
     <string name="everyday_life_label">Vida cotidiana</string>
-    <string name="everyday_life_btn">Vida cotidiana (ver video)</string>
+    <string name="everyday_life_btn">Vida cotidiana (ver documental)</string>
     <string name="architecture_label">Arquitectura</string>
     <string name="art_label">Arte</string>
     <string name="everyday_life_first_text">La vida cotidiana en el Antiguo Egipto estaba fuertemente ligada al río Nilo y la agricultura, con campesinos dedicados a los cultivos y la vida en pequeñas casas de adobe. La sociedad era jerárquica, con el faraón en la cima, y las familias realizaban festejos para ocasiones importantes. La dieta consistía en cereales, legumbres, frutas y cerveza, y la higiene personal era fundamental.</string>

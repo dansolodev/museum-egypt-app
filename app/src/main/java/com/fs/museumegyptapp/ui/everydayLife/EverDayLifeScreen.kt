@@ -13,12 +13,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.OndemandVideo
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -33,6 +33,7 @@ import com.fs.museumegyptapp.ui_kit.theme.OutlineGold
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
 internal fun EverydayLifeScreen(modifier: Modifier = Modifier) {
+    val uriHandler = LocalUriHandler.current
     Scaffold(
         modifier = modifier,
         topBar = {
@@ -45,7 +46,9 @@ internal fun EverydayLifeScreen(modifier: Modifier = Modifier) {
         bottomBar = {
             PrimaryIconButton(
                 text = stringResource(id = R.string.everyday_life_btn),
-                onClick = {},
+                onClick = {
+                    uriHandler.openUri("https://youtu.be/MPqEwcGQjfg?si=LOGnbSoX1guoDO-V")
+                },
                 icon = Icons.Default.OndemandVideo,
                 modifier = Modifier.padding(16.dp),
                 iconContentDescription = stringResource(id = R.string.everyday_life_btn)
@@ -65,7 +68,6 @@ internal fun EverydayLifeScreen(modifier: Modifier = Modifier) {
                         textIdRes = section.header,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(color = MaterialTheme.colorScheme.primaryContainer)
                     )
                 }
 
