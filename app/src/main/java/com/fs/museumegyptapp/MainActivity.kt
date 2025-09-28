@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import com.fs.museumegyptapp.model.MuseumRoutes
 import com.fs.museumegyptapp.ui.MainScreen
 import com.fs.museumegyptapp.ui.architecture.ArchitectureScreen
+import com.fs.museumegyptapp.ui.art.ArtScreen
 import com.fs.museumegyptapp.ui.everydayLife.EverydayLifeScreen
 import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 
@@ -38,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     }
 
                     composable(route = MuseumRoutes.Art.route) {
-
+                        ArtScreen()
                     }
 
                 }
