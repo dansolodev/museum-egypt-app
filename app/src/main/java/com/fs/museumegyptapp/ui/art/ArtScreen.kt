@@ -21,7 +21,10 @@ import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun ArtScreen(modifier: Modifier = Modifier) {
+internal fun ArtScreen(
+    onItemSelected: (Int) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Scaffold(
         modifier = modifier,
         topBar = {
@@ -42,7 +45,7 @@ internal fun ArtScreen(modifier: Modifier = Modifier) {
                 EgyptSimpleTextIcon(
                     icon = itemArt.icon,
                     textCardIdRes = itemArt.title,
-                    onCardPressed = {}
+                    onCardPressed = { onItemSelected(itemArt.image) }
                 )
             }
         }
@@ -56,7 +59,7 @@ internal fun ArtScreen(modifier: Modifier = Modifier) {
 @Composable
 private fun ArtScreenPreview() {
     MuseumEgyptAppTheme {
-        ArtScreen()
+        ArtScreen(onItemSelected = {})
     }
 }
 
@@ -67,6 +70,6 @@ private fun ArtScreenPreview() {
 @Composable
 private fun ArtScreenDarkPreview() {
     MuseumEgyptAppTheme {
-        ArtScreen()
+        ArtScreen(onItemSelected = {})
     }
 }

@@ -4,12 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.fs.museumegyptapp.model.MuseumRoutes
 import com.fs.museumegyptapp.ui.MainScreen
 import com.fs.museumegyptapp.ui.architecture.ArchitectureScreen
+import com.fs.museumegyptapp.ui.art.ArtImageTransformationScreen
 import com.fs.museumegyptapp.ui.art.ArtScreen
 import com.fs.museumegyptapp.ui.everydayLife.EverydayLifeScreen
 import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
@@ -39,7 +42,26 @@ class MainActivity : ComponentActivity() {
                     }
 
                     composable(route = MuseumRoutes.Art.route) {
-                        ArtScreen()
+                        ArtScreen(
+                            onItemSelected = {
+                                navController.navigate(
+                                    MuseumRoutes.ArtTransformation.createRoute(
+                                        image = it
+                                    )
+                                )
+                            }
+                        )
+                    }
+
+                    composable(
+                        route = MuseumRoutes.ArtTransformation.route,
+                        arguments = listOf(
+                            navArgument("image") { type = NavType.IntType }
+                        )
+                    ) { backStackEntry ->
+                        backStackEntry.arguments?.getInt("image")?.let {
+                            ArtImageTransformationScreen(image = it)
+                        }
                     }
 
                 }
