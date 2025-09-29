@@ -10,7 +10,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.fs.museumegyptapp.model.MuseumRoutes
+import com.fs.museumegyptapp.model.sectionsArchitectureSection
 import com.fs.museumegyptapp.ui.MainScreen
+import com.fs.museumegyptapp.ui.architecture.ArchitectureDetailScreen
 import com.fs.museumegyptapp.ui.architecture.ArchitectureScreen
 import com.fs.museumegyptapp.ui.art.ArtImageTransformationScreen
 import com.fs.museumegyptapp.ui.art.ArtScreen
@@ -38,14 +40,20 @@ class MainActivity : ComponentActivity() {
                     }
 
                     composable(route = MuseumRoutes.Architecture.route) {
-                        ArchitectureScreen()
+                        ArchitectureScreen(
+                            onArchitectureItemSelected = {
+                                navController.navigate(
+                                    route = MuseumRoutes.ArchitectureDetail.createRoute(id = it)
+                                )
+                            }
+                        )
                     }
 
                     composable(route = MuseumRoutes.Art.route) {
                         ArtScreen(
                             onItemSelected = {
                                 navController.navigate(
-                                    MuseumRoutes.ArtTransformation.createRoute(
+                                    route = MuseumRoutes.ArtTransformation.createRoute(
                                         image = it
                                     )
                                 )
@@ -56,12 +64,26 @@ class MainActivity : ComponentActivity() {
                     composable(
                         route = MuseumRoutes.ArtTransformation.route,
                         arguments = listOf(
-                            navArgument("image") { type = NavType.IntType }
+                            navArgument(name = "image") { type = NavType.IntType }
                         )
                     ) { backStackEntry ->
                         backStackEntry.arguments?.getInt("image")?.let {
                             ArtImageTransformationScreen(image = it)
                         }
+                    }
+
+                    composable(
+                        route = MuseumRoutes.ArchitectureDetail.route,
+                        arguments = listOf(
+                            navArgument(name = "id") { type = NavType.IntType }
+                        )
+                    ) { backStackEntry ->
+                        val id = backStackEntry.arguments?.getInt("id") ?: -1
+                        sectionsArchitectureSection.firstOrNull { it.id == id }?.let { item ->
+
+                            ArchitectureDetailScreen(item = item)
+                        }
+
                     }
 
                 }

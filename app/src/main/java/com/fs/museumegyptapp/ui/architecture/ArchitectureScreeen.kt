@@ -24,7 +24,10 @@ import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-internal fun ArchitectureScreen(modifier: Modifier = Modifier) {
+internal fun ArchitectureScreen(
+    onArchitectureItemSelected: (Int) -> Unit,
+    modifier: Modifier = Modifier
+) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         topBar = {
@@ -47,7 +50,7 @@ internal fun ArchitectureScreen(modifier: Modifier = Modifier) {
                 EgyptSquareCard(
                     cardImageIdRed = architectureItem.cardImage,
                     textCardIdRes = architectureItem.title,
-                    onCardPressed = {},
+                    onCardPressed = { onArchitectureItemSelected(architectureItem.id) },
                     modifier = Modifier.height(height = 140.dp),
                     cardImageContentDescription = stringResource(id = architectureItem.title)
                 )
@@ -63,7 +66,7 @@ internal fun ArchitectureScreen(modifier: Modifier = Modifier) {
 @Composable
 private fun ArchitectureScreenPreview() {
     MuseumEgyptAppTheme {
-        ArchitectureScreen()
+        ArchitectureScreen(onArchitectureItemSelected = {})
     }
 }
 
@@ -75,6 +78,6 @@ private fun ArchitectureScreenPreview() {
 @Composable
 private fun ArchitectureScreenDarkPreview() {
     MuseumEgyptAppTheme {
-        ArchitectureScreen()
+        ArchitectureScreen(onArchitectureItemSelected = {})
     }
 }
