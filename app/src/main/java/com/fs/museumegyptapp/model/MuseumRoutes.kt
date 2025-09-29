@@ -14,4 +14,6 @@ sealed class MuseumRoutes(val route: String) {
     data object ArtTransformation : MuseumRoutes(route = "art_transformation/{image}") {
         fun createRoute(@DrawableRes image: Int) = "art_transformation/$image"
     }
+
+    data object VideoPlayer : MuseumRoutes(route = "video")
 }

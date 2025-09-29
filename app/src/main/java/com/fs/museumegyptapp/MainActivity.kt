@@ -18,6 +18,7 @@ import com.fs.museumegyptapp.ui.art.ArtImageTransformationScreen
 import com.fs.museumegyptapp.ui.art.ArtScreen
 import com.fs.museumegyptapp.ui.everydayLife.EverydayLifeScreen
 import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
+import com.fs.museumegyptapp.ui_kit.video_player.ExoPlayerView
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +45,11 @@ class MainActivity : ComponentActivity() {
                             onArchitectureItemSelected = {
                                 navController.navigate(
                                     route = MuseumRoutes.ArchitectureDetail.createRoute(id = it)
+                                )
+                            },
+                            onGoToVideo = {
+                                navController.navigate(
+                                    route = MuseumRoutes.VideoPlayer.route
                                 )
                             }
                         )
@@ -84,6 +90,12 @@ class MainActivity : ComponentActivity() {
                             ArchitectureDetailScreen(item = item)
                         }
 
+                    }
+
+                    composable(
+                        route = MuseumRoutes.VideoPlayer.route
+                    ) {
+                        ExoPlayerView()
                     }
 
                 }

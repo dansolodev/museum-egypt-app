@@ -29,6 +29,7 @@ import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 @Composable
 internal fun ArchitectureScreen(
     onArchitectureItemSelected: (Int) -> Unit,
+    onGoToVideo: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -43,9 +44,7 @@ internal fun ArchitectureScreen(
         bottomBar = {
             PrimaryIconButton(
                 text = stringResource(id = R.string.architecture_btn),
-                onClick = {
-
-                },
+                onClick = { onGoToVideo() },
                 icon = Icons.Default.OndemandVideo,
                 modifier = Modifier.padding(16.dp),
                 iconContentDescription = stringResource(id = R.string.architecture_btn)
@@ -80,7 +79,7 @@ internal fun ArchitectureScreen(
 @Composable
 private fun ArchitectureScreenPreview() {
     MuseumEgyptAppTheme {
-        ArchitectureScreen(onArchitectureItemSelected = {})
+        ArchitectureScreen(onArchitectureItemSelected = {}, onGoToVideo = {})
     }
 }
 
@@ -92,6 +91,6 @@ private fun ArchitectureScreenPreview() {
 @Composable
 private fun ArchitectureScreenDarkPreview() {
     MuseumEgyptAppTheme {
-        ArchitectureScreen(onArchitectureItemSelected = {})
+        ArchitectureScreen(onArchitectureItemSelected = {}, onGoToVideo = {})
     }
 }
