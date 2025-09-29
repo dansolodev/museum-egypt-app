@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.OndemandVideo
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -20,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.fs.museumegyptapp.R
 import com.fs.museumegyptapp.model.sectionsArchitectureSection
 import com.fs.museumegyptapp.ui_kit.components.EgyptSquareCard
+import com.fs.museumegyptapp.ui_kit.components.PrimaryIconButton
 import com.fs.museumegyptapp.ui_kit.theme.MuseumEgyptAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,6 +38,17 @@ internal fun ArchitectureScreen(
                 title = {
                     Text(text = stringResource(id = R.string.architecture_label))
                 }
+            )
+        },
+        bottomBar = {
+            PrimaryIconButton(
+                text = stringResource(id = R.string.architecture_btn),
+                onClick = {
+
+                },
+                icon = Icons.Default.OndemandVideo,
+                modifier = Modifier.padding(16.dp),
+                iconContentDescription = stringResource(id = R.string.architecture_btn)
             )
         }
     ) { innerPadding ->
